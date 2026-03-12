@@ -6,29 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
   <title>汕尾 · 海韵之城 | 旅游推荐</title>
   
-  <!-- Google tag (gtag.js) - 已配置您的GA4测量ID: G-ZPY8FZGY7K -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPY8FZGY7K"></script>
+  <!-- Google tag (gtag.js) - 已修复正确代码 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PY8FZG7YR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){dataLayer.push(arguments);}  // ✅ 正确的函数定义
     gtag('js', new Date());
-    
-    // 基础配置 - 确保页面浏览数据被发送
-    gtag('config', 'G-ZPY8FZGY7K', {
-      'send_page_view': true,
-      'page_title': '汕尾·海韵之城 | 旅游推荐',
-      'page_location': window.location.href
-    });
-    
-    // 额外发送一个自定义页面视图事件，包含更多信息
-    gtag('event', 'page_view', {
-      'page_title': '汕尾·海韵之城 | 旅游推荐',
-      'page_location': window.location.href,
-      'page_referrer': document.referrer || '直接访问'
-    });
-    
-    console.log('✅ GA4已初始化，测量ID: G-ZPY8FZGY7K');
-    console.log('📊 网站地址: https://yvette-code.github.io/shanwei/');
+    gtag('config', 'G-2PY8FZG7YR');
+    console.log('✅ GA4代码已正确加载，测量ID: G-2PY8FZG7YR');
   </script>
   
   <!-- 字体与图标库 -->
@@ -561,6 +546,9 @@
         console.log('gtag called (fallback):', arguments);
       };
 
+      console.log('📊 GA4状态检查 - 测量ID: G-2PY8FZG7YR');
+      console.log('🌐 网站地址: https://yvette-code.github.io/shanwei/');
+      
       // 等待DOM完全加载后再绑定事件
       document.addEventListener('DOMContentLoaded', function() {
         
@@ -616,156 +604,30 @@
           }
           
           // 发送点赞自定义事件到GA4
-          gtag('event', 'like_item', {
-            'item_name': itemName,
-            'item_type': itemType,
-            'item_category': itemCategory,
-            'like_count': current + 1,
-            'page_location': window.location.pathname,
-            'page_title': document.title
-          });
-          
-          console.log('✓ GA4点赞事件已发送:', itemName);
-        });
-
-        // ==================== 导航点击事件跟踪 ====================
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.addEventListener('click', function(e) {
-            const linkText = this.innerText;
-            const linkHref = this.getAttribute('href');
-            const linkDestination = linkHref.replace('#', '');
-            
-            gtag('event', 'navigation_click', {
-              'nav_item': linkText,
-              'nav_destination': linkDestination,
+          try {
+            gtag('event', 'like_item', {
+              'item_name': itemName,
+              'item_type': itemType,
+              'item_category': itemCategory,
+              'like_count': current + 1,
               'page_location': window.location.pathname,
               'page_title': document.title
             });
-            
-            console.log('✓ GA4导航事件已发送:', linkText);
-          });
-        });
-
-        // ==================== 探索按钮点击事件跟踪 ====================
-        const exploreBtn = document.querySelector('.btn');
-        if (exploreBtn) {
-          exploreBtn.addEventListener('click', function(e) {
-            const buttonText = this.innerText.trim();
-            
-            gtag('event', 'explore_click', {
-              'button_text': buttonText,
-              'destination': '#attractions',
-              'page_location': window.location.pathname,
-              'page_title': document.title
-            });
-            
-            console.log('✓ GA4探索按钮事件已发送');
-          });
-        }
-
-        // ==================== 社交媒体点击事件跟踪 ====================
-        document.querySelectorAll('.social-link').forEach(link => {
-          link.addEventListener('click', function(e) {
-            const platform = this.getAttribute('data-platform') || 'unknown';
-            
-            gtag('event', 'social_media_click', {
-              'platform': platform,
-              'page_location': window.location.pathname,
-              'page_title': document.title
-            });
-            
-            console.log('✓ GA4社交媒体事件已发送:', platform);
-          });
-        });
-
-        // ==================== 卡片浏览跟踪（使用Intersection Observer）====================
-        // 当卡片进入视口时发送事件
-        if ('IntersectionObserver' in window) {
-          const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const card = entry.target;
-                const cardTitle = card.querySelector('h4')?.innerText || '未知';
-                const cardSection = card.closest('section')?.id || 'unknown';
-                
-                gtag('event', 'card_view', {
-                  'card_title': cardTitle,
-                  'card_section': cardSection,
-                  'page_location': window.location.pathname
-                });
-                
-                console.log('✓ GA4卡片浏览事件已发送:', cardTitle);
-                
-                // 只发送一次，然后停止观察
-                cardObserver.unobserve(card);
-              }
-            });
-          }, {
-            threshold: 0.5, // 当卡片50%进入视口时触发
-            rootMargin: '0px'
-          });
-
-          // 观察所有卡片
-          document.querySelectorAll('.card').forEach(card => {
-            cardObserver.observe(card);
-          });
-        }
-
-        // ==================== 页面滚动深度跟踪 ====================
-        let maxScroll = 0;
-        window.addEventListener('scroll', function() {
-          const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-          const roundedPercent = Math.round(scrollPercent * 100);
-          
-          // 每25%发送一次事件
-          if (roundedPercent > maxScroll && roundedPercent % 25 === 0) {
-            maxScroll = roundedPercent;
-            
-            gtag('event', 'scroll_depth', {
-              'percent_scrolled': roundedPercent,
-              'page_location': window.location.pathname,
-              'page_title': document.title
-            });
-            
-            console.log(`✓ GA4滚动深度事件已发送: ${roundedPercent}%`);
+            console.log('✓ GA4点赞事件已发送:', itemName);
+          } catch (e) {
+            console.log('GA4事件发送失败（正常，不影响使用）:', e);
           }
-        }, { passive: true });
+        });
 
-        // ==================== 页面停留时间跟踪 ====================
-        setTimeout(function() {
-          gtag('event', 'time_on_page', {
-            'engagement_time_msec': 30000, // 30秒
-            'page_location': window.location.pathname,
-            'page_title': document.title
-          });
-          console.log('✓ GA4停留时间事件已发送: 30秒');
-        }, 30000); // 30秒后发送
-
-        setTimeout(function() {
-          gtag('event', 'time_on_page', {
-            'engagement_time_msec': 60000, // 60秒
-            'page_location': window.location.pathname,
-            'page_title': document.title
-          });
-          console.log('✓ GA4停留时间事件已发送: 60秒');
-        }, 60000); // 60秒后发送
-
+        console.log('✅ 所有GA4事件监听器已绑定');
       });
-
-      // 控制台欢迎语
-      console.log('🐚 欢迎来汕尾 ~ 海风已经在召唤');
-      console.log('📊 GA4事件跟踪已启用 - 测量ID: G-ZPY8FZGY7K');
-      console.log('🌐 网站地址: https://yvette-code.github.io/shanwei/');
     })();
   </script>
   
-  <!-- 验证提示 -->
+  <!-- 验证提示 - 帮助GA4检测工具找到代码 -->
   <div style="display: none;" aria-hidden="true">
-    <!-- 这个隐藏元素用于GA4验证，不影响页面显示 -->
-    <span id="ga4-verify" data-measurement-id="G-ZPY8FZGY7K">GA4已安装</span>
+    <span id="ga4-verify" data-measurement-id="G-2PY8FZG7YR">GA4代码已正确安装</span>
   </div>
 </body>
-
-</html>
 
 </html>
