@@ -6,25 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
   <title>汕尾 · 海韵之城 | 旅游推荐</title>
   
-  <!-- Google tag (gtag.js) - >
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PY8FZG7YR"></script>
+  <!-- Google tag (gtag.js) - 已配置您的GA4测量ID: G-ZPY8FZGY7K -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPY8FZGY7K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     
-    // 配置GA4
-    gtag('config', 'G-2PY8FZG7YR', {
+    // 基础配置 - 确保页面浏览数据被发送
+    gtag('config', 'G-ZPY8FZGY7K', {
       'send_page_view': true,
-      'page_title': '汕尾·海韵之城 | 旅游推荐'
-    });
-    
-    // 页面加载时发送screen_view事件
-    gtag('event', 'screen_view', {
-      'screen_name': 'home_page',
       'page_title': '汕尾·海韵之城 | 旅游推荐',
       'page_location': window.location.href
     });
+    
+    // 额外发送一个自定义页面视图事件，包含更多信息
+    gtag('event', 'page_view', {
+      'page_title': '汕尾·海韵之城 | 旅游推荐',
+      'page_location': window.location.href,
+      'page_referrer': document.referrer || '直接访问'
+    });
+    
+    console.log('✅ GA4已初始化，测量ID: G-ZPY8FZGY7K');
+    console.log('📊 网站地址: https://yvette-code.github.io/shanwei/');
   </script>
   
   <!-- 字体与图标库 -->
@@ -32,6 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     * {
       margin: 0;
@@ -749,11 +754,18 @@
 
       // 控制台欢迎语
       console.log('🐚 欢迎来汕尾 ~ 海风已经在召唤');
-      console.log('📊 GA4事件跟踪已启用 - 请将G-XXXXXXXXXX替换为您的实际测量ID');
+      console.log('📊 GA4事件跟踪已启用 - 测量ID: G-ZPY8FZGY7K');
+      console.log('🌐 网站地址: https://yvette-code.github.io/shanwei/');
     })();
   </script>
-
-  <!-- 注意：请将上面的G-XXXXXXXXXX替换为您实际的GA4测量ID -->
+  
+  <!-- 验证提示 -->
+  <div style="display: none;" aria-hidden="true">
+    <!-- 这个隐藏元素用于GA4验证，不影响页面显示 -->
+    <span id="ga4-verify" data-measurement-id="G-ZPY8FZGY7K">GA4已安装</span>
+  </div>
 </body>
+
+</html>
 
 </html>
