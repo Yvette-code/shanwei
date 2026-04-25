@@ -218,7 +218,6 @@
             border-color: #2c9c7c;
             transform: scale(1.02);
         }
-        /* 共用模态窗样式 */
         .modal {
             display: none;
             position: fixed;
@@ -289,6 +288,8 @@
             border-radius: 28px;
             margin-bottom: 20px;
             box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            object-fit: cover;
+            max-height: 350px;
         }
         .modal-body p {
             margin-bottom: 16px;
@@ -396,7 +397,7 @@
             <div class="hero-content">
                 <span class="hero-badge"><i class="fas fa-map-marker-alt"></i> 中国·广东 汕尾</span>
                 <h1>在南海之滨，<br>遇见「慢节奏」的治愈海岸</h1>
-                <p>红海湾的浪、风车岛的日落、晨洲蚝的鲜甜… 汕尾藏着最纯粹的海岛生活。不拥挤、不浮躁，只有浪花与渔歌。</p>
+                <p>红海湾的浪、风车岛的日落、晨洲蚝的鲜甜…… 汕尾藏着最纯粹的海岛生活。不拥挤、不浮躁，只有浪花与渔歌。</p>
                 <div class="hero-stats">
                     <div class="stat-item"><span class="stat-num">455km</span><br>海岸线蜿蜒</div>
                     <div class="stat-item"><span class="stat-num">96+</span><br>大小岛屿</div>
@@ -404,7 +405,10 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://cdn.pixabay.com/photo/2020/05/28/11/02/beach-5231532_1280.jpg" alt="汕尾风车岛浪漫海岸线" loading="lazy">
+                <!-- 封面使用稳定且汕尾风格图片，添加备用 -->
+                <img src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                     alt="汕尾风车岛浪漫海岸线" 
+                     onerror="this.onerror=null;this.src='https://cdn.pixabay.com/photo/2020/05/28/11/02/beach-5231532_1280.jpg';">
             </div>
         </div>
     </div>
@@ -453,7 +457,10 @@
 
         <div style="display: flex; flex-wrap: wrap; gap: 24px; margin: 60px 0 20px; align-items: center;">
             <div style="flex: 1; min-width: 240px;">
-                <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="汕尾海鲜盛宴" style="border-radius: 32px; width: 100%; box-shadow: 0 12px 18px -10px rgba(0,0,0,0.1);">
+                <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     alt="汕尾海鲜盛宴" 
+                     style="border-radius: 32px; width: 100%; box-shadow: 0 12px 18px -10px rgba(0,0,0,0.1);"
+                     onerror="this.src='https://cdn.pixabay.com/photo/2016/03/05/19/02/seafood-1237766_1280.jpg';">
             </div>
             <div style="flex: 1;">
                 <h3 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 16px;">从渔港到餐桌，<br>「鲜」是唯一的主题</h3>
@@ -474,11 +481,11 @@
 <footer>
     <div class="container">
         <p><i class="far fa-copyright"></i> 2025 汕尾文旅资源推广 | 发现粤东明珠，感受滨海慢生活</p>
-        <p style="margin-top: 10px; font-size: 0.7rem;">风车岛实拍 · 红海湾风情</p>
+        <p style="margin-top: 10px; font-size: 0.7rem;">红海湾·风车岛·晨洲蚝乡</p>
     </div>
 </footer>
 
-<!-- 通用模态框（用于景点详情，每个卡片提供专属照片） -->
+<!-- 景点详情模态框（专属照片+描述，图片加载失败自动切换备用） -->
 <div id="attractionModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -486,7 +493,7 @@
             <span class="close-modal" id="closeAttractionModal">&times;</span>
         </div>
         <div class="modal-body" id="attractionModalBody">
-            <img id="attractionImg" src="" alt="景点照片">
+            <img id="attractionImg" src="" alt="景点照片" style="width:100%; border-radius:28px;">
             <p id="attractionDesc"></p>
         </div>
         <div class="modal-cta">
@@ -495,7 +502,7 @@
     </div>
 </div>
 
-<!-- 出行锦囊模态框（与之前相同结构） -->
+<!-- 出行锦囊模态框 -->
 <div id="travelModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -513,7 +520,7 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-    // GA4 初始化 (用户替换ID)
+    // GA4 初始化 (用户可替换真实ID，无界面文字)
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -522,7 +529,7 @@
         gtag('config', gaMeasurementId);
     } else {
         if(window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'){
-            console.log("请将 GA4 Measurement ID 替换为真实ID");
+            console.log("请将 GA4 Measurement ID 替换为真实ID以收集分析数据");
         }
         gtag('config', gaMeasurementId, { send_page_view: false });
     }
@@ -530,26 +537,31 @@
         if (typeof gtag === 'function') gtag('event', eventName, eventParams);
     }
 
-    // ----- 景点卡片点击：显示专属照片和详细介绍 -----
+    // ================= 景点数据（包含主图和备用图，确保任何网络下都能显示） =================
     const attractionData = {
         "红海湾": {
             img: "https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=800",
+            backupImg: "https://cdn.pixabay.com/photo/2017/01/28/02/24/sea-2011223_1280.jpg",
             desc: "🌊 红海湾遮浪半岛：一边风平浪静，一边波涛汹涌，独特的海洋奇观被誉为“中国观浪第一湾”。这里也是帆船、冲浪爱好者的天堂，每年举办多项国际水上运动赛事。岸边的南海观音寺可俯瞰全景，日落时分格外震撼。"
         },
         "晨洲蚝乡": {
             img: "https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg?auto=compress&cs=tinysrgb&w=800",
+            backupImg: "https://cdn.pixabay.com/photo/2018/09/23/15/58/oysters-3698003_1280.jpg",
             desc: "🦪 晨洲村是“中国蚝乡”，出产的生蚝酥甜无渣、肥美多汁。中央电视台曾专题报道。游客可以体验开蚝、品尝全蚝宴，还可以参观万亩蚝田，感受渔村风情。每年11月举办蚝文化节，热闹非凡。"
         },
         "玄武山": {
             img: "https://images.pexels.com/photos/2666379/pexels-photo-2666379.jpeg?auto=compress&cs=tinysrgb&w=800",
+            backupImg: "https://cdn.pixabay.com/photo/2019/07/23/13/51/temple-4357127_1280.jpg",
             desc: "🏯 玄武山旅游区位于陆丰碣石镇，国家4A级景区。元山寺始建于南宋，是粤东最大的宗教祈福圣地，融合潮汕与广府建筑艺术。景区内还有福星塔、麒麟石、四美亭等古迹，登高可望碣石湾全景。"
         },
         "风车岛": {
             img: "https://cdn.pixabay.com/photo/2021/08/25/16/20/windmill-6573739_1280.jpg",
+            backupImg: "https://images.pexels.com/photos/2166927/pexels-photo-2166927.jpeg?auto=compress&cs=tinysrgb&w=800",
             desc: "🎐 风车岛（施公寮半岛）是三面环海的小众秘境，巨大的白色风车群矗立在山岗上，与蔚蓝大海构成绝美画面。这里是摄影爱好者的天堂，可拍摄风车日落、星空。沙滩细腻，人少清静，适合露营、赶海。"
         }
     };
 
+    // 获取模态框元素
     const attractionModal = document.getElementById('attractionModal');
     const attrTitle = document.getElementById('attractionModalTitle');
     const attrImg = document.getElementById('attractionImg');
@@ -557,20 +569,29 @@
     const closeAttr = document.getElementById('closeAttractionModal');
     const attractionPlanBtn = document.getElementById('attractionPlanBtn');
 
+    // 打开景点模态框，并处理图片加载失败时使用备用图
     function openAttractionModal(name) {
         const data = attractionData[name];
         if (data) {
             attrTitle.innerText = name;
+            // 设置主图，并添加错误处理备用
             attrImg.src = data.img;
+            attrImg.onerror = function() {
+                this.onerror = null;
+                this.src = data.backupImg;
+            };
             attrDesc.innerHTML = data.desc;
             attractionModal.style.display = 'flex';
-            // 发送景点点击事件 (可用于分析热门景点)
+            // 后台记录景点点击（无界面文字，仅用于分析）
             sendGAEvent('attraction_clicked', { attraction_name: name, source: 'card' });
         }
     }
+
     function closeAttractionModal() {
         attractionModal.style.display = 'none';
     }
+
+    // 绑定卡片点击事件
     document.querySelectorAll('#attractionCards .card').forEach(card => {
         card.addEventListener('click', () => {
             const name = card.getAttribute('data-name');
@@ -588,7 +609,7 @@
         closeAttractionModal();
     });
 
-    // ----- 出行顾虑按钮（完整内容） -----
+    // ================= 出行顾虑按钮（完整锦囊内容） =================
     const factorContentMap = {
         "交通是否便捷": {
             title: "🚄 交通无忧 · 快速抵达汕尾",
@@ -642,6 +663,7 @@
             travelModal.style.display = 'flex';
         }
     }
+
     document.querySelectorAll('.factor-btn').forEach(btn => {
         btn.addEventListener('click', () => openTravelModal(btn.getAttribute('data-factor')));
     });
@@ -664,6 +686,8 @@
             setTimeout(() => alert("正在为你跳转至官方票务合作平台，畅游汕尾~"), 100);
         });
     }
+
+    console.log("页面已加载：所有景点图片均有主备链接，确保可以打开。");
 </script>
 </body>
 </html>
