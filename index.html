@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>汕尾文旅 | 发现东方夏威夷</title>
-    <!-- Google Fonts 优化 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -13,7 +12,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: #fefefe;
@@ -21,14 +19,11 @@
             line-height: 1.5;
             scroll-behavior: smooth;
         }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
-        /* 导航区 */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -38,7 +33,6 @@
             gap: 16px;
             border-bottom: 1px solid #e9edf2;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
@@ -48,7 +42,6 @@
             color: transparent;
             letter-spacing: -0.5px;
         }
-
         .logo i {
             color: #2c9c7c;
             margin-right: 6px;
@@ -57,7 +50,6 @@
             background-clip: unset;
             color: #2c9c7c;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #2c3e50;
@@ -65,29 +57,23 @@
             font-weight: 500;
             transition: color 0.2s;
         }
-
         .nav-links a:hover {
             color: #2c9c7c;
         }
-
-        /* 英雄区 */
         .hero {
             background: linear-gradient(105deg, #ffffff 0%, #f5fbf8 100%);
             padding: 60px 0 40px;
             border-radius: 0 0 48px 48px;
         }
-
         .hero-grid {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 40px;
         }
-
         .hero-content {
             flex: 1.2;
         }
-
         .hero-badge {
             background: #e0f2e9;
             color: #1f6e5c;
@@ -98,7 +84,6 @@
             display: inline-block;
             margin-bottom: 20px;
         }
-
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 700;
@@ -106,37 +91,31 @@
             margin-bottom: 20px;
             color: #0f2e3a;
         }
-
         .hero-content p {
             font-size: 1.1rem;
             color: #4a5b6e;
             margin-bottom: 30px;
             max-width: 90%;
         }
-
         .hero-stats {
             display: flex;
             gap: 32px;
             margin-top: 20px;
         }
-
         .stat-item {
             text-align: left;
         }
-
         .stat-num {
             font-size: 1.8rem;
             font-weight: 800;
             color: #2c9c7c;
         }
-
         .hero-image {
             flex: 1;
             border-radius: 32px;
             overflow: hidden;
             box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
         }
-
         .hero-image img {
             width: 100%;
             height: auto;
@@ -144,12 +123,9 @@
             object-fit: cover;
             transition: transform 0.4s ease;
         }
-
         .hero-image:hover img {
             transform: scale(1.02);
         }
-
-        /* 特色板块 */
         .section-title {
             text-align: center;
             font-size: 2rem;
@@ -157,21 +133,18 @@
             margin: 60px 0 20px;
             color: #1a3b47;
         }
-
         .section-sub {
             text-align: center;
             color: #5a6f7e;
             max-width: 680px;
             margin: 0 auto 48px;
         }
-
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 32px;
             margin: 40px 0;
         }
-
         .card {
             background: white;
             border-radius: 32px;
@@ -180,31 +153,26 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
             transition: all 0.3s ease;
             border: 1px solid #ecf3f0;
+            cursor: pointer;
         }
-
         .card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 30px -12px rgba(44, 156, 124, 0.15);
             border-color: #cbe6de;
         }
-
         .card-icon {
             font-size: 2.8rem;
             color: #2c9c7c;
             margin-bottom: 18px;
         }
-
         .card h3 {
             font-size: 1.5rem;
             margin-bottom: 12px;
         }
-
         .card p {
             color: #5f747f;
             font-size: 0.95rem;
         }
-
-        /* 偏好调研区 - 温和收集潜在顾虑，每个按钮点击弹出详细内容（无分析痕迹） */
         .insight-section {
             background: #f4faf7;
             border-radius: 48px;
@@ -213,20 +181,17 @@
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
-
         .insight-title {
             font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 12px;
             color: #175d4b;
         }
-
         .insight-desc {
             color: #3f6b5e;
             max-width: 600px;
             margin: 0 auto 28px;
         }
-
         .factors-grid {
             display: flex;
             flex-wrap: wrap;
@@ -234,7 +199,6 @@
             gap: 16px;
             margin-bottom: 24px;
         }
-
         .factor-btn {
             background: white;
             border: 1px solid #cbdcd5;
@@ -248,21 +212,13 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
         }
-
-        .factor-btn i {
-            font-size: 1rem;
-            color: #2c9c7c;
-        }
-
         .factor-btn:hover {
             background: #e2f3ec;
             border-color: #2c9c7c;
             transform: scale(1.02);
         }
-
-        /* 模态窗样式 */
+        /* 共用模态窗样式 */
         .modal {
             display: none;
             position: fixed;
@@ -270,15 +226,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(5px);
         }
         .modal-content {
             background-color: #ffffff;
-            max-width: 520px;
+            max-width: 620px;
             width: 90%;
             border-radius: 40px;
             padding: 28px 30px 36px;
@@ -306,13 +262,13 @@
             padding-bottom: 12px;
         }
         .modal-header h3 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #135c4a;
             margin: 0;
         }
         .close-modal {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 400;
             cursor: pointer;
             color: #8fafa2;
@@ -327,6 +283,12 @@
             color: #2b4b40;
             line-height: 1.5;
             margin: 20px 0;
+        }
+        .modal-body img {
+            width: 100%;
+            border-radius: 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
         }
         .modal-body p {
             margin-bottom: 16px;
@@ -353,23 +315,19 @@
             background: #145e4b;
             transform: scale(1.02);
         }
-        /* 购票CTA区域 */
         .cta-section {
             text-align: center;
             margin: 60px 0 80px;
             background: linear-gradient(120deg, #ebf8f2, #ffffff);
             padding: 52px 24px;
             border-radius: 64px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
         }
-
         .cta-title {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
             color: #104d3f;
         }
-
         .cta-button {
             display: inline-block;
             background: linear-gradient(95deg, #1f7760, #2c9c7c);
@@ -385,23 +343,18 @@
             border: none;
             cursor: pointer;
         }
-
         .cta-button i {
             margin-right: 8px;
         }
-
         .cta-button:hover {
             background: linear-gradient(95deg, #0f5f4b, #227a60);
             transform: translateY(-3px);
-            box-shadow: 0 18px 28px -10px rgba(44,156,124,0.5);
         }
-
         .small-note {
             margin-top: 20px;
             font-size: 0.8rem;
             color: #83a39a;
         }
-
         footer {
             border-top: 1px solid #e4ece8;
             padding: 32px 0;
@@ -409,31 +362,15 @@
             color: #6b8b7f;
             font-size: 0.85rem;
         }
-
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .hero-content p {
-                max-width: 100%;
-            }
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-            .nav-links a {
-                margin: 0 12px;
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
-            .factor-btn {
-                padding: 8px 18px;
-                font-size: 0.85rem;
-            }
-            .modal-content {
-                padding: 20px;
-            }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { max-width: 100%; }
+            .navbar { flex-direction: column; text-align: center; }
+            .nav-links a { margin: 0 12px; }
+            .section-title { font-size: 1.7rem; }
+            .factor-btn { padding: 8px 18px; font-size: 0.85rem; }
+            .modal-content { padding: 20px; }
+            .modal-header h3 { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -442,9 +379,7 @@
 <header>
     <div class="container">
         <div class="navbar">
-            <div class="logo">
-                <i class="fas fa-water"></i> 汕尾文旅 · 漫游蓝湾
-            </div>
+            <div class="logo"><i class="fas fa-water"></i> 汕尾文旅 · 漫游蓝湾</div>
             <div class="nav-links">
                 <a href="#">首页</a>
                 <a href="#">山海风光</a>
@@ -456,7 +391,6 @@
 </header>
 
 <main>
-    <!-- Hero 颜值修复：高稳定图片（Unsplash 高清可访问海滩） -->
     <div class="hero">
         <div class="container hero-grid">
             <div class="hero-content">
@@ -470,40 +404,37 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- 更换为稳定 Unsplash 汕尾风格海景，保证图片加载成功 -->
-                <img src="https://images.pexels.com/photos/2104150/pexels-photo-2104150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="汕尾红海湾浪漫海岸线" loading="lazy">
+                <img src="https://cdn.pixabay.com/photo/2020/05/28/11/02/beach-5231532_1280.jpg" alt="汕尾风车岛浪漫海岸线" loading="lazy">
             </div>
         </div>
     </div>
 
     <div class="container">
-        <!-- 城市亮点卡片 -->
         <div class="section-title">为什么是汕尾？<br><span style="font-size: 1rem; font-weight: normal;">天然摄影棚 · 海产宝库</span></div>
         <div class="section-sub">曾被《国家地理》提名「中国最美海岸线」之一，这里藏着未被过度打扰的安逸。</div>
-        <div class="cards-grid">
-            <div class="card">
+        <div class="cards-grid" id="attractionCards">
+            <div class="card" data-name="红海湾">
                 <div class="card-icon"><i class="fas fa-umbrella-beach"></i></div>
                 <h3>红海湾</h3>
                 <p>一面波涛汹涌，一面风平浪静，独特的遮浪奇观，世界级冲浪点。</p>
             </div>
-            <div class="card">
+            <div class="card" data-name="晨洲蚝乡">
                 <div class="card-icon"><i class="fas fa-fish"></i></div>
                 <h3>晨洲蚝乡</h3>
-                <p>“酥甜无渣” 晨洲蚝，央视推荐美味，生蚝爱好者的天堂。</p>
+                <p>“酥甜无渣”晨洲蚝，央视推荐美味，生蚝爱好者的天堂。</p>
             </div>
-            <div class="card">
+            <div class="card" data-name="玄武山">
                 <div class="card-icon"><i class="fas fa-mountain"></i></div>
                 <h3>玄武山</h3>
                 <p>元山寺祈福，岭南文化名镇，感受潮汕与广府交界的独特民俗。</p>
             </div>
-            <div class="card">
+            <div class="card" data-name="风车岛">
                 <div class="card-icon"><i class="fas fa-wind"></i></div>
                 <h3>风车岛</h3>
                 <p>旋转的风车，湛蓝的海水，出片率100%的小众秘境。</p>
             </div>
         </div>
 
-        <!-- 出行顾虑探索模块：每位因素按钮点击弹出详细内容（无分析痕迹，只提供贴心指南） -->
         <div class="insight-section" id="travelPreference">
             <i class="fas fa-comment-dots" style="font-size: 2rem; color: #2c9c7c; opacity: 0.8;"></i>
             <div class="insight-title">💡 您的出行小贴士 · 解锁完美汕尾之旅</div>
@@ -520,7 +451,6 @@
             <p style="font-size: 0.75rem; margin-top: 20px; color: #86a69d;"><i class="fas fa-leaf"></i> 点击任一标签，获取专属汕尾旅行锦囊</p>
         </div>
 
-        <!-- 美食与人文展示 替换稳定图片 -->
         <div style="display: flex; flex-wrap: wrap; gap: 24px; margin: 60px 0 20px; align-items: center;">
             <div style="flex: 1; min-width: 240px;">
                 <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="汕尾海鲜盛宴" style="border-radius: 32px; width: 100%; box-shadow: 0 12px 18px -10px rgba(0,0,0,0.1);">
@@ -532,7 +462,6 @@
             </div>
         </div>
 
-        <!-- 购票转化区 -->
         <div class="cta-section" id="bookSection">
             <div class="cta-title">准备好探索「山海湖城」了吗？</div>
             <p style="margin-bottom: 30px; color: #3b6b5e; font-size: 1.05rem;">高铁直达汕尾站，从广州/深圳出发仅需1.5h，说走就走～</p>
@@ -545,16 +474,33 @@
 <footer>
     <div class="container">
         <p><i class="far fa-copyright"></i> 2025 汕尾文旅资源推广 | 发现粤东明珠，感受滨海慢生活</p>
-        <p style="margin-top: 10px; font-size: 0.7rem;">实拍风光比图片更动人</p>
+        <p style="margin-top: 10px; font-size: 0.7rem;">风车岛实拍 · 红海湾风情</p>
     </div>
 </footer>
 
-<!-- 模态框结构（每个顾虑因素点开后显示详细解答，无GA4字样） -->
+<!-- 通用模态框（用于景点详情，每个卡片提供专属照片） -->
+<div id="attractionModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="attractionModalTitle">景点名称</h3>
+            <span class="close-modal" id="closeAttractionModal">&times;</span>
+        </div>
+        <div class="modal-body" id="attractionModalBody">
+            <img id="attractionImg" src="" alt="景点照片">
+            <p id="attractionDesc"></p>
+        </div>
+        <div class="modal-cta">
+            <button id="attractionPlanBtn" class="modal-btn"><i class="fas fa-map-marked-alt"></i> 规划我的汕尾之旅</button>
+        </div>
+    </div>
+</div>
+
+<!-- 出行锦囊模态框（与之前相同结构） -->
 <div id="travelModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
             <h3 id="modalTitle">✨ 汕尾旅行锦囊</h3>
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" id="closeTravelModal">&times;</span>
         </div>
         <div class="modal-body" id="modalBody">
             <p>详细内容加载中...</p>
@@ -565,148 +511,159 @@
     </div>
 </div>
 
-<!-- GA4 后台代码（无任何界面文字，游客无法察觉，仅用于分析） -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-    // ---------- GA4 初始化占位 (用户需替换为真实ID) ----------
+    // GA4 初始化 (用户替换ID)
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    let gaMeasurementId = 'G-XXXXXXXXXX';  // 请替换成您的GA4测量ID，例如 G-ABC1234567
+    let gaMeasurementId = 'G-XXXXXXXXXX';
     if (gaMeasurementId !== 'G-XXXXXXXXXX') {
         gtag('config', gaMeasurementId);
     } else {
         if(window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'){
-            console.log("GA4 ID未配置，请将代码中的 G-XXXXXXXXXX 替换为真实ID以接收数据");
+            console.log("请将 GA4 Measurement ID 替换为真实ID");
         }
         gtag('config', gaMeasurementId, { send_page_view: false });
     }
-    
-    // 封装发送自定义事件（完全后台，无页面提示）
     function sendGAEvent(eventName, eventParams = {}) {
-        if (typeof gtag === 'function') {
-            gtag('event', eventName, eventParams);
-        }
+        if (typeof gtag === 'function') gtag('event', eventName, eventParams);
     }
 
-    // ---------- 为每个顾虑按钮准备详细内容（包含建议，打消疑虑，并暗中收集真实阻挠因素） ----------
-    const factorContentMap = {
-        "交通是否便捷": {
-            title: "🚄 交通指南 · 轻松抵达汕尾",
-            desc: "<p>🚅 高铁便利：汕尾站每日往返广深超过80趟列车，广州东/深圳北出发约1~1.5小时直达；汕头/厦门方向同样便捷。</p><p>🚌 市内交通：旅游专线巴士连接红海湾、金町湾、陆丰等核心景区；共享电动车/网约车全覆盖，出行无忧。</p><p>✈️ 揭阳潮汕机场或惠州平潭机场落地，换乘高铁约40分钟即可到达，路网完善。</p>"
+    // ----- 景点卡片点击：显示专属照片和详细介绍 -----
+    const attractionData = {
+        "红海湾": {
+            img: "https://images.pexels.com/photos/1743165/pexels-photo-1743165.jpeg?auto=compress&cs=tinysrgb&w=800",
+            desc: "🌊 红海湾遮浪半岛：一边风平浪静，一边波涛汹涌，独特的海洋奇观被誉为“中国观浪第一湾”。这里也是帆船、冲浪爱好者的天堂，每年举办多项国际水上运动赛事。岸边的南海观音寺可俯瞰全景，日落时分格外震撼。"
         },
-        "住宿丰富度": {
-            title: "🏨 住宿指南 · 从海景民宿到星级酒店",
-            desc: "<p>🌊 金町湾度假区：拥有希尔顿、一线海景公寓，满足亲子/蜜月需求。</p><p>🏡 红海湾周边：特色民宿、设计师客栈，推窗见海，价格丰俭由人（200-800元不等）。</p><p>🏙️ 城区CBD：国际连锁品牌、经济型酒店全覆盖，出行便利，美食夜市步行可达。</p><p>⭐ 淡旺季房源充足，提前预订还可享受文旅消费券补贴。</p>"
+        "晨洲蚝乡": {
+            img: "https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg?auto=compress&cs=tinysrgb&w=800",
+            desc: "🦪 晨洲村是“中国蚝乡”，出产的生蚝酥甜无渣、肥美多汁。中央电视台曾专题报道。游客可以体验开蚝、品尝全蚝宴，还可以参观万亩蚝田，感受渔村风情。每年11月举办蚝文化节，热闹非凡。"
         },
-        "可玩景点丰富度": {
-            title: "🏞️ 景点巡礼 · 三天玩不够",
-            desc: "<p>🌅 红海湾遮浪半岛：免费观景台&冲浪基地，随手大片。</p><p>🎡 风车岛+神秘沙滩：ins风灯塔，浪漫日落。</p><p>🏯 玄武山旅游区：国家4A级景区，祈福文化。</p><p>🌾 陆河万亩梅园、华侨管理区东南亚风情、品清湖夜景…自然与人文交织，免费/低价景点占比高，门票经济很友好！</p>"
+        "玄武山": {
+            img: "https://images.pexels.com/photos/2666379/pexels-photo-2666379.jpeg?auto=compress&cs=tinysrgb&w=800",
+            desc: "🏯 玄武山旅游区位于陆丰碣石镇，国家4A级景区。元山寺始建于南宋，是粤东最大的宗教祈福圣地，融合潮汕与广府建筑艺术。景区内还有福星塔、麒麟石、四美亭等古迹，登高可望碣石湾全景。"
         },
-        "旅行开销/性价比": {
-            title: "💰 消费指南 · 高性价比海岛游",
-            desc: "<p>🍜 美食篇：一顿地道海鲜大餐人均50-80元，小吃薄饼/菜茶约10-15元。</p><p>🏠 住宿篇：经济型酒店180元起，海景民宿旺季约400元（淡季低至200）。</p><p>🚗 交通篇：市区公交2元，景区直通车单程10-20元。整体花费仅为三亚/珠海的一半，幸福感超高。</p><p>🎫 大多数景点免门票，省下来的钱可以多吃两顿生蚝！</p>"
-        },
-        "气候是否舒适": {
-            title: "☀️ 四季气候 · 最佳旅行季",
-            desc: "<p>🌸 春季（3-5月）20-26℃，花开遍野，适合露营。</p><p>🏖️ 夏季（6-9月）28-32℃，海风习习，玩水旺季（注意避开台风预警即可）。</p><p>🍁 秋季（10-11月）24-28℃，天空通透，海鲜肥美，全年最佳。</p><p>❄️ 冬季（12-2月）12-20℃，温暖过冬胜地，避开北方严寒。全年300天空气质量优良，任何时候都适合放松身心。</p>"
-        },
-        "导览/配套设施完善度": {
-            title: "🗺️ 服务设施 · 智慧旅游护航",
-            desc: "<p>📍 游客服务中心提供免费地图、行李寄存、充电桩；主要景点支持电子导览、语音讲解。</p><p>🚾 景区洗手间按星级标准升级，干净整洁；沿途休息驿站覆盖WIFI。</p><p>📱 官方小程序'智游汕尾'可查询路线、预约门票、获取卫生间导航。且多处设置无障碍通道，家庭出游无忧。</p>"
-        },
-        "旅行安全/卫生": {
-            title: "🛡️ 安全卫生 · 让您安心畅游",
-            desc: "<p>🏥 汕尾市三甲医院及医疗点覆盖核心景区，应急救援响应快速。主要浴场配备救生员。</p><p>🧹 餐饮场所明厨亮灶，生鲜食材每日抽检，治安环境优良，夜间滨海路有巡逻队，游客满意度位居粤东前列。</p><p>✅ 疫情后常态化卫生管理，酒店民宿严格执行一客一换，放心入住。</p>"
+        "风车岛": {
+            img: "https://cdn.pixabay.com/photo/2021/08/25/16/20/windmill-6573739_1280.jpg",
+            desc: "🎐 风车岛（施公寮半岛）是三面环海的小众秘境，巨大的白色风车群矗立在山岗上，与蔚蓝大海构成绝美画面。这里是摄影爱好者的天堂，可拍摄风车日落、星空。沙滩细腻，人少清静，适合露营、赶海。"
         }
     };
 
-    // DOM 元素
-    const modal = document.getElementById('travelModal');
+    const attractionModal = document.getElementById('attractionModal');
+    const attrTitle = document.getElementById('attractionModalTitle');
+    const attrImg = document.getElementById('attractionImg');
+    const attrDesc = document.getElementById('attractionDesc');
+    const closeAttr = document.getElementById('closeAttractionModal');
+    const attractionPlanBtn = document.getElementById('attractionPlanBtn');
+
+    function openAttractionModal(name) {
+        const data = attractionData[name];
+        if (data) {
+            attrTitle.innerText = name;
+            attrImg.src = data.img;
+            attrDesc.innerHTML = data.desc;
+            attractionModal.style.display = 'flex';
+            // 发送景点点击事件 (可用于分析热门景点)
+            sendGAEvent('attraction_clicked', { attraction_name: name, source: 'card' });
+        }
+    }
+    function closeAttractionModal() {
+        attractionModal.style.display = 'none';
+    }
+    document.querySelectorAll('#attractionCards .card').forEach(card => {
+        card.addEventListener('click', () => {
+            const name = card.getAttribute('data-name');
+            openAttractionModal(name);
+        });
+    });
+    closeAttr.addEventListener('click', closeAttractionModal);
+    window.addEventListener('click', (e) => {
+        if (e.target === attractionModal) closeAttractionModal();
+    });
+    attractionPlanBtn.addEventListener('click', () => {
+        sendGAEvent('plan_trip_from_attraction', { attraction: attrTitle.innerText });
+        window.open('https://flight.ctrip.com/online/charter/domestic?kwd=汕尾&searchType=city', '_blank');
+        setTimeout(() => alert("为您跳转至官方合作平台，轻松规划汕尾行程～"), 80);
+        closeAttractionModal();
+    });
+
+    // ----- 出行顾虑按钮（完整内容） -----
+    const factorContentMap = {
+        "交通是否便捷": {
+            title: "🚄 交通无忧 · 快速抵达汕尾",
+            desc: "<p>🚅 <strong>高铁直达</strong>：汕尾站每日往返广深超80趟列车，广州东/深圳北出发约1~1.5小时直达；厦深铁路串联潮汕、厦门。</p><p>🚌 <strong>市内交通</strong>：旅游专线巴士连接红海湾、金町湾、陆丰等核心景区；共享电动车/网约车全覆盖，便捷便宜。</p><p>✈️ <strong>飞机+高铁</strong>：揭阳潮汕机场或惠州平潭机场落地，换乘高铁约40分钟即达汕尾站，路网成熟。</p>"
+        },
+        "住宿丰富度": {
+            title: "🏨 多元住宿 · 从海景民宿到星级酒店",
+            desc: "<p>🌊 <strong>金町湾度假区</strong>：希尔顿、一线海景公寓，满足亲子/蜜月需求，推窗见海。</p><p>🏡 <strong>红海湾周边</strong>：特色民宿、设计师客栈，价格200-800元不等，丰俭由人。</p><p>🏙️ <strong>城区CBD</strong>：国际连锁品牌、经济型酒店全覆盖，步行可达美食夜市。</p><p>⭐ 淡旺季房源充足，提前预订可享文旅消费券补贴。</p>"
+        },
+        "可玩景点丰富度": {
+            title: "🏞️ 精彩景点 · 三天玩不够",
+            desc: "<p>🌅 <strong>红海湾遮浪半岛</strong>：免费观景台&冲浪基地，随手大片。</p><p>🎡 <strong>风车岛+神秘沙滩</strong>：ins风灯塔，浪漫日落，出片率100%。</p><p>🏯 <strong>玄武山旅游区</strong>：国家4A级景区，祈福文化。</p><p>🌾 陆河万亩梅园、华侨管理区东南亚风情、品清湖夜景…自然与人文交织，大多数景点免门票，超高性价比！</p>"
+        },
+        "旅行开销/性价比": {
+            title: "💰 高性价比 · 惬意消费指南",
+            desc: "<p>🍜 <strong>美食篇</strong>：一顿地道海鲜大餐人均50-80元，小吃薄饼/菜茶约10-15元。</p><p>🏠 <strong>住宿篇</strong>：经济型酒店180元起，海景民宿旺季约400元（淡季低至200）。</p><p>🚗 <strong>交通篇</strong>：市区公交2元，景区直通车单程10-20元。整体花费仅为三亚/珠海的一半，幸福感超高。</p><p>🎫 大多景点免门票，省下来的钱可以多吃两顿生蚝大餐！</p>"
+        },
+        "气候是否舒适": {
+            title: "☀️ 四季如春 · 最佳旅行季",
+            desc: "<p>🌸 <strong>春季（3-5月）</strong>20-26℃，花开遍野，适合露营。</p><p>🏖️ <strong>夏季（6-9月）</strong>28-32℃，海风习习，玩水旺季（避开台风预警即可）。</p><p>🍁 <strong>秋季（10-11月）</strong>24-28℃，天空通透，海鲜肥美，全年最佳。</p><p>❄️ <strong>冬季（12-2月）</strong>12-20℃，温暖过冬胜地，避开北方严寒。全年300天空气质量优良，任何时候都适合放松身心。</p>"
+        },
+        "导览/配套设施完善度": {
+            title: "🗺️ 智慧服务 · 设施齐全",
+            desc: "<p>📍 游客服务中心提供免费地图、行李寄存、充电桩；主要景点支持电子导览、语音讲解。</p><p>🚾 景区洗手间按星级标准升级，干净整洁；沿途休息驿站覆盖免费WIFI。</p><p>📱 官方小程序'智游汕尾'可查询路线、预约门票、获取卫生间导航。多处设置无障碍通道，家庭出游无忧。</p>"
+        },
+        "旅行安全/卫生": {
+            title: "🛡️ 安全卫生 · 安心畅游",
+            desc: "<p>🏥 汕尾市三甲医院及医疗点覆盖核心景区，应急救援响应快速。主要浴场配备救生员。</p><p>🧹 餐饮场所明厨亮灶，生鲜食材每日抽检，治安环境优良，夜间滨海路有巡逻队，游客满意度位居粤东前列。</p><p>✅ 住宿严格执行一客一换，常态化卫生管理，让您玩得放心。</p>"
+        }
+    };
+
+    const travelModal = document.getElementById('travelModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
-    const closeModalSpan = document.querySelector('.close-modal');
+    const closeTravel = document.getElementById('closeTravelModal');
     const modalPlanBtn = document.getElementById('modalPlanBtn');
     let currentConcernFactor = '';
 
-    // 打开模态框并填充对应内容
-    function openModalForFactor(factorKey) {
+    function openTravelModal(factorKey) {
         const data = factorContentMap[factorKey];
         if (data) {
             modalTitle.innerHTML = data.title;
             modalBody.innerHTML = data.desc;
             currentConcernFactor = factorKey;
-            modal.style.display = 'flex';
-            // 发送GA4事件：记录用户打开哪个阻碍因素的详细内容 (后台收集真实顾虑，表面为查看攻略)
-            sendGAEvent('travel_concern_selected', {
-                concern_factor: factorKey,
-                interaction_type: 'open_detail_modal',
-                page_section: 'travel_preference'
-            });
+            travelModal.style.display = 'flex';
+            sendGAEvent('travel_concern_selected', { concern_factor: factorKey, interaction_type: 'open_detail_modal' });
         } else {
             modalTitle.innerHTML = "✨ 旅行锦囊";
             modalBody.innerHTML = "<p>更多精彩攻略持续更新中，欢迎咨询客服~</p>";
             currentConcernFactor = factorKey;
-            modal.style.display = 'flex';
-            sendGAEvent('travel_concern_selected', { concern_factor: factorKey, interaction_type: 'open_modal_fallback' });
+            travelModal.style.display = 'flex';
         }
     }
-
-    // 绑定所有因素按钮 -> 点击时弹出模态窗并附有详细内容（完全符合“每个按钮点进去都有内容”）
-    const factorBtns = document.querySelectorAll('.factor-btn');
-    factorBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            const factorValue = this.getAttribute('data-factor');
-            // 打开模态框展示详细内容，包含建议和痛点解决方案
-            openModalForFactor(factorValue);
-        });
+    document.querySelectorAll('.factor-btn').forEach(btn => {
+        btn.addEventListener('click', () => openTravelModal(btn.getAttribute('data-factor')));
     });
-
-    // 关闭模态框
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-    closeModalSpan.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    // 模态窗内“规划行程”按钮: 促进转化，埋点并模拟购票跳转或跳转至票务平台
-    modalPlanBtn.addEventListener('click', function() {
-        // 记录从具体顾虑因素详情页点击规划行程（后期可分析哪些阻碍因素导致购票犹豫）
-        sendGAEvent('plan_trip_from_concern', {
-            concern_factor: currentConcernFactor,
-            source: 'modal_guide_cta'
-        });
-        // 跳转购票平台（同主按钮行为，打开携程汕尾产品页）
+    closeTravel.addEventListener('click', () => travelModal.style.display = 'none');
+    window.addEventListener('click', (e) => { if (e.target === travelModal) travelModal.style.display = 'none'; });
+    modalPlanBtn.addEventListener('click', () => {
+        sendGAEvent('plan_trip_from_concern', { concern_factor: currentConcernFactor });
         window.open('https://flight.ctrip.com/online/charter/domestic?kwd=汕尾&searchType=city', '_blank');
-        // 可选的提示友好
-        setTimeout(() => {
-            alert("为您跳转至官方合作平台，轻松规划汕尾行程～");
-        }, 80);
-        closeModal();
+        setTimeout(() => alert("为您跳转至官方合作平台，轻松规划汕尾行程～"), 80);
+        travelModal.style.display = 'none';
     });
 
-    // 主购票按钮逻辑 (原样保留，同时埋点购票意图)
+    // 主购票按钮
     const bookBtn = document.getElementById('bookTicketBtn');
     if (bookBtn) {
-        bookBtn.addEventListener('click', function(e) {
+        bookBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            sendGAEvent('book_ticket_intent', {
-                'page_location': window.location.href,
-                'button_location': 'bottom_cta',
-                'timestamp': new Date().toISOString()
-            });
+            sendGAEvent('book_ticket_intent', { page_location: window.location.href, button_location: 'bottom_cta' });
             window.open('https://flight.ctrip.com/online/charter/domestic?kwd=汕尾&searchType=city', '_blank');
-            setTimeout(() => {
-                alert("正在为你跳转至官方票务合作平台，畅游汕尾~");
-            }, 100);
+            setTimeout(() => alert("正在为你跳转至官方票务合作平台，畅游汕尾~"), 100);
         });
     }
-
-    // 保证所有图片可加载，若备用链接失效则做一层后备（无需额外处理，图床稳定）
-    console.log("汕尾文旅互动页面已加载：每个出行考量按钮均有详细锦囊内容，图片链接已修复。");
 </script>
-
 </body>
 </html>
